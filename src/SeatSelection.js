@@ -35,12 +35,30 @@ class SeatSelection extends React.Component {
     // .catch(console.warn);
   } //updateSeatSelection
 
+  createTable = (data) => {
+    let table = []
+
+    //Outer loop to create parent
+    let rowNum = this.state.flight[0];
+    console.log(this.state.flight[0].row);
+
+
+
+    // for (let i=0; i < rowNum; i++) {
+    //   let children = []
+    //   //inner loop to create children
+    //   for (let j = 0; j < 5; j++) {
+    //     //replace with seat data
+    //     children.push(<td>{`  --Seat--  `}</td>)
+    //   }
+    //   //Create the parent and add the children
+    //   table.push(<tr>{children}</tr>)
+    // }
+    // return table
+  }//create table
 
 
   render(){
-
-    let row = this.state.flight.row;
-    console.log('row:',row);
 
 
     return(
@@ -56,7 +74,7 @@ class SeatSelection extends React.Component {
             }
           </ul>
           <table>
-
+            {this.createTable(this.state.flight)}
           </table>
 
         <hr />
