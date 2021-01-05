@@ -6,9 +6,9 @@ import Home from './Home';
 function App() {
   return (
     <div className="App">
-      <SeatSelection />
       <Home />
-    </div>
+      <SeatSelection />
+      </div>
   );
 }
 
