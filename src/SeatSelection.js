@@ -3,7 +3,11 @@ import axios from 'axios';
 import './App.css';
 
 
+<<<<<<< HEAD
 const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
+=======
+const AIRPLANE_API_URL = 'http://localhost:3000/reservations.json';
+>>>>>>> 755991793e6de9a245cc4f892056573df5988277
 
 class SeatSelection extends React.Component {
 
