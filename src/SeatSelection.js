@@ -35,7 +35,14 @@ class SeatSelection extends React.Component {
     // .catch(console.warn);
   } //updateSeatSelection
 
+
+
   render(){
+
+    let row = this.state.flight.row;
+    console.log('row:',row);
+
+
     return(
       <div>
         <h1>Seat Selection </h1>
@@ -48,6 +55,10 @@ class SeatSelection extends React.Component {
                 </li>)
             }
           </ul>
+          <table>
+
+          </table>
+
         <hr />
       </div>
     ) //return
