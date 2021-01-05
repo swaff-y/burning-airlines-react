@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 
-const BASE_URL = 'http://localhost:3000/';
+const AIRPLANE_API_URL = 'http://localhost:3000/reservations.json';
 
 class Home extends React.Component {
 
