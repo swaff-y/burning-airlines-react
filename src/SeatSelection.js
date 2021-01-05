@@ -8,9 +8,7 @@ const AIRPLANE_API_URL = 'http://localhost:3000/airplanes';
 class SeatSelection extends React.Component {
 
   state = {
-    column: '',
-    row: '',
-    flightNumber: ''
+    flight: {}
   }; //state
 
 
@@ -19,7 +17,7 @@ class SeatSelection extends React.Component {
     axios.get(AIRPLANE_API_URL)
     .then( res => {
       console.log('response: ', res.data);
-      //save into state.
+      this.setState({flight: res.data}); //save the response into state
     })
     .catch(console.warn);
   }
