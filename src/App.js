@@ -1,14 +1,16 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import SeatSelection from './SeatSelection';
 import Home from './Home';
+import UserButton from './components/UserButton';
 
 function App() {
   return (
     <div className="App">
-      <SeatSelection />
+      <UserButton />
       <Home />
-    </div>
+      <SeatSelection />
+      </div>
   );
 }
 
