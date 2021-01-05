@@ -3,11 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 
-<<<<<<< HEAD
 const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
-=======
-const AIRPLANE_API_URL = 'http://localhost:3000/reservations.json';
->>>>>>> 755991793e6de9a245cc4f892056573df5988277
 
 class SeatSelection extends React.Component {
 
@@ -39,7 +35,14 @@ class SeatSelection extends React.Component {
     // .catch(console.warn);
   } //updateSeatSelection
 
+
+
   render(){
+
+    let row = this.state.flight.row;
+    console.log('row:',row);
+
+
     return(
       <div>
         <h1>Seat Selection </h1>
@@ -53,11 +56,7 @@ class SeatSelection extends React.Component {
             }
           </ul>
           <table>
-          {
-            //for (let row=0; row < this.state.flight.row; row++){
-              //console.log('current row:', row );
-            //} //end for loop columns
-          }
+
           </table>
 
         <hr />
