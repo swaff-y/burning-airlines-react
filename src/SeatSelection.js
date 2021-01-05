@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 
-const AIRPLANE_API_URL = 'http://localhost:3000/airplanes';
+const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
 
 class SeatSelection extends React.Component {
 
@@ -48,6 +48,14 @@ class SeatSelection extends React.Component {
                 </li>)
             }
           </ul>
+          <table>
+          {
+            //for (let row=0; row < this.state.flight.row; row++){
+              //console.log('current row:', row );
+            //} //end for loop columns
+          }
+          </table>
+
         <hr />
       </div>
     ) //return
