@@ -8,7 +8,7 @@ const AIRPLANE_API_URL = 'http://localhost:3000/airplanes';
 class SeatSelection extends React.Component {
 
   state = {
-    flight: {}
+    flight: []
   }; //state
 
 
@@ -39,10 +39,16 @@ class SeatSelection extends React.Component {
     return(
       <div>
         <h1>Seat Selection </h1>
-        <p>{}</p>
-        {
-          //add
-        }
+          <ul>
+            {
+              this.state.flight.map(
+                flight =>
+                <li key={ flight.id}>
+                  {flight.id}
+                </li>)
+            }
+          </ul>
+        <hr />
       </div>
     ) //return
   } //render
