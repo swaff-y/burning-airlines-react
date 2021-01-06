@@ -18,7 +18,7 @@ class UserButton extends React.Component {
   componentDidMount(){
     axios.get(RAILS_USERS_BASE_URL)
     .then((res)=>{
-      console.log("data: ", res.data);
+      // console.log("data: ", res.data);
       this.setState({data: res.data});
     })
     .catch(console.warn);
@@ -34,6 +34,12 @@ class UserButton extends React.Component {
     console.log("clicked value:", ev.target.innerText);
     this.props.updateUser(ev.target.innerText);
   }
+
+  // toggleActiveUser = (user) => {
+  //   this.state.data.forEach(function(item) {
+  //     if (this.props.currentUser === ){}
+  //   }//forEach
+  // }//toggleActiveUser
 
   render() {
     const selectedUser=this.state.data.name;

@@ -20,15 +20,15 @@ class Search extends React.Component {
   };
 
   fetchSearchData = (searchData) => {
-    this.setState ({searchData})
+    this.setState({searchData})
   }
 
   fetchFromVal = (fromVal) =>{
-    this.setState ({fromVal})
+    this.setState({fromVal})
   }
 
   fetchToVal = (toVal) =>{
-    this.setState ({toVal})
+    this.setState({toVal})
   }
 
   render(){

@@ -4,6 +4,7 @@ import axios from 'axios';
 // import  from './';
 
 const RAILS_FLIGHTS_BASE_URL = 'http://localhost:3000/flights.json'
+const SEARCH_API_URL = 'http://localhost:3000/flights/';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -38,27 +39,37 @@ class SearchForm extends React.Component {
   };
 
   showFlights =() =>{
-    axios.get(SEARCH_API_URL)
+    let url = SEARCH_API_URL + this.state.fromVal + "/" + this.state.toVal
+    axios.get(url)
     .then((res)=>{
       console.log('response:', res.data);
-      this.setState({searchData:res.data}); //save into state
+      this.setState({searchData: res.data});
+      this.runFunc();
+      // this.setState({searchData:res.data}); //save into state
     })
     .catch(console.warn);
     }
 
+  runFunc = () =>{
+    console.log("data", this.state.searchData);
+    this.props.searchData(this.state.searchData);
+  }
+
   handleSubmit = (ev) => {
     ev.preventDefault();
     console.log("submited!!!", this.state.fromVal, this.state.toVal);
-    showFlights()
+    // this.setState({fromVal:ev.})
+    // this.setState({toVal:})
+    this.showFlights()
   };
 
   handleChangeFrom = (ev) => {
     // this.setState({fromVal: ev.target.value})
-    this.props.from(ev.target.value)
+    this.setState({fromVal: ev.target.value})
   };
   handleChangeTo = (ev) => {
     // this.setState({toVal: ev.target.value})
-    this.props.to(ev.target.value)
+    this.setState({toVal: ev.target.value})
   };
 
   render() {
