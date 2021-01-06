@@ -13,6 +13,7 @@ class SearchForm extends React.Component {
           toVal: '',
           data: [],
           destinationFrom: [],
+          searchData:[]
       };
   };
 
@@ -36,18 +37,28 @@ class SearchForm extends React.Component {
     return unique ;
   };
 
+  showFlights =() =>{
+    axios.get(SEARCH_API_URL)
+    .then((res)=>{
+      console.log('response:', res.data);
+      this.setState({searchData:res.data}); //save into state
+    })
+    .catch(console.warn);
+    }
+
   handleSubmit = (ev) => {
     ev.preventDefault();
     console.log("submited!!!", this.state.fromVal, this.state.toVal);
+    showFlights()
   };
 
   handleChangeFrom = (ev) => {
     // this.setState({fromVal: ev.target.value})
-    this.props.to(ev.target.value)
+    this.props.from(ev.target.value)
   };
   handleChangeTo = (ev) => {
     // this.setState({toVal: ev.target.value})
-    this.props.from(ev.target.value)
+    this.props.to(ev.target.value)
   };
 
   render() {

@@ -26,13 +26,7 @@ class App extends React.Component {
     this.setState({seatSelected})
   }
 
-  fetchFromVal = (fromVal) =>{
-    setState ({fromVal})
-  }
 
-  fetchToVal = (toVal) =>{
-    setState ({toVal})
-  }
 
   render() {
     return (
@@ -44,7 +38,7 @@ class App extends React.Component {
         <Router >
           <Route path ='/' component={Nav} />
           <Route exact path ='/' component={Welcome} />
-          <Route exact path = "/search" render={(props)=>{<Search to={this.fetchToVal} from={this.fetchFromVal}/>}} />
+          <Route exact path ='/search' component={Search} />
           <Route exact path = "/flight/:id" component={FlightDetails} />
         </Router>
 
