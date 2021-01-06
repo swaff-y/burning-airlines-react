@@ -34,7 +34,7 @@ class App extends React.Component {
           <Route path ='/' component={Nav} />
           <Route exact path ='/' component={Welcome} />
           <Route exact path = "/search" component={Search} />
-          <Route exact path = "/flight/:id" component={FlightDetails} />
+          <Route exact path = "/flight/:id" render={(props)=> < FlightDetails handleSeatSelected={this.handleSeatSelected} />} />
         </Router>
 
           <footer>
