@@ -16,11 +16,22 @@ import { Route, Link, HashRouter as Router} from 'react-router-dom';
 class App extends React.Component {
   state = {
     seatSelection: '4B',
-    selectedFlight: 13
+    selectedFlight: 13,
+    fromVal:'',
+    toVal:''
+
   };
 
   handledSeatSelected = (seatSelected) => {
     this.setState({seatSelected})
+  }
+
+  fetchFromVal = (fromVal) =>{
+    setState ({fromVal})
+  }
+
+  fetchToVal = (toVal) =>{
+    setState ({toVal})
   }
 
   render() {
@@ -33,12 +44,12 @@ class App extends React.Component {
         <Router >
           <Route path ='/' component={Nav} />
           <Route exact path ='/' component={Welcome} />
-          <Route exact path = "/search" component={Search} />
+          <Route exact path = "/search" render={(props)=>{<Search to={this.fetchToVal} from={this.fetchFromVal}/>}} />
           <Route exact path = "/flight/:id" component={FlightDetails} />
         </Router>
 
           <footer>
-          <p> &copy Burnt Airlines Inc. (Seriously, good luck.)</p>
+          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)</p>
           </footer>
 
       </div>
