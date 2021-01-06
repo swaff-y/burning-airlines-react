@@ -16,7 +16,8 @@ import { Route, Link, HashRouter as Router} from 'react-router-dom';
 class App extends React.Component {
   state = {
     seatSelection: '4B',
-    selectedFlight: 75
+    selectedFlight: 75,
+    currentUser: []
   };
 
   handledSeatSelected = (seatSelected) => {
@@ -29,13 +30,10 @@ class App extends React.Component {
 
   fetchToVal = (toVal) =>{
     this.setState ({toVal})
-<<<<<<< HEAD
-=======
   }
 
   updateUser = (currentUser) => {
     this.setState({currentUser})
->>>>>>> c181ba9b3dbac998374808afa10f325272959ecc
   }
 
   render() {
@@ -46,11 +44,8 @@ class App extends React.Component {
           <p>Good luck.</p>
         </header>
         <Router >
-<<<<<<< HEAD
-          <Route path ='/' component={Nav} />
-=======
+
           <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} updateUser={this.updateUser}/>} />
->>>>>>> c181ba9b3dbac998374808afa10f325272959ecc
           <Route exact path ='/' component={Welcome} />
 
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal}/>} />
