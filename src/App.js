@@ -15,9 +15,10 @@ import { Route, Link, HashRouter as Router} from 'react-router-dom';
 
 class App extends React.Component {
   state = {
-    seatSelection: '4B',
-    selectedFlight: 75,
-    currentUser: []
+    // seatSelection: '',
+    // selectedFlight: "",
+    currentUser: [],
+    currentUserID: []
   };
 
   fetchFromVal = (fromVal) =>{
@@ -28,20 +29,20 @@ class App extends React.Component {
     this.setState ({toVal})
   }
 
-  updateUser = (currentUser) => {
-    this.setState({currentUser})
+  updateUser = (currentUser, currentUserID) => {
+    this.setState({currentUser: currentUser})
+    this.setState({currentUserID: currentUserID})
   }
 
   render() {
     return (
       <div className="App">
         <header>
-          <h1>Welcome to Burnt Airlines</h1>
-          <p>Good luck.</p>
+          <p>Burnt Airlines</p>
         </header>
         <Router >
 
-          <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} updateUser={this.updateUser}/>} />
+          <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} currentUserID={this.state.currentUserID} updateUser={this.updateUser}/>} />
           <Route exact path ='/' component={Welcome} />
 
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal}/>} />
