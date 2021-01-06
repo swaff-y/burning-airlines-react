@@ -14,22 +14,34 @@ class Search extends React.Component {
     selectedUser: '',
     selectedFlight: '',
     from: '',
-    to: ''
+    to: '',
+    searchData: []
 
   };
 
-  
+  fetchSearchData = (searchData) => {
+    this.setState ({searchData})
+  }
+
+  fetchFromVal = (fromVal) =>{
+    this.setState ({fromVal})
+  }
+
+  fetchToVal = (toVal) =>{
+    this.setState ({toVal})
+  }
+
   render(){
     return (
       <div className="container">
 
-        <SearchForm from={this.props.from} to={this.props.to}/>
+        <SearchForm from={this.fetchFromVal} to={this.fetchToVal} searchData={this.fetchSearchData}/>
         <br />
         <hr />
         <br/>
 
 
-        <Home from={this.state.from} to={this.state.to} selectedFlight={this.state.selectedFlight}/>
+        <Home from={this.state.from} to={this.state.to} selectedFlight={this.state.selectedFlight} searchData={this.state.searchData}/>
 
       </div>
     ); //return
