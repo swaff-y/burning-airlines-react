@@ -4,12 +4,14 @@ import '../App.css';
 
 
 const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
+const USER_API_URL = 'http://localhost:3000/users.json';
 
 class SeatSelection extends React.Component {
 
   state = {
     flight: [],
-    seatAllocated: "1A"
+    seatAllocated: "2A",
+    userSeats: ["2C","5B","5D"]
   }; //state
 
 
@@ -23,10 +25,21 @@ class SeatSelection extends React.Component {
     .catch(console.warn);
   }
 
+  //get the data from the Rails User API
+  fetchUsers = () => {
+    axios.get(USER_API_URL)
+    .then( res => {
+      console.log('response: ', res.data);
+      this.setState({user: res.data}); //save the response into state
+    })
+    .catch(console.warn);
+  }
+
   //Mount the Rails data onload of page
   componentDidMount(){
     console.log('check mounted!');
     this.fetchSeats();
+    this.fetchUsers();
   }
 
   updateSeatSelection = (content) => {
@@ -41,6 +54,26 @@ class SeatSelection extends React.Component {
 
   }
 
+  toggleSeatSelection = (seatNumber) => {
+    let toggleInformation = `btn btn-secondary m-1 col-2 text-center" data-bs-toggle="button" `;
+    console.log('seat Number:',seatNumber,'seatAllocated:',this.state.seatAllocated);
+    console.log(this.state.userSeats[0] )
+
+    if (
+      seatNumber === this.state.seatAllocated){
+        toggleInformation = `btn btn-primary m-1 active col-2 text-center" aria-pressed="false" disabled`
+    }
+    this.state.userSeats.forEach(function(item) {
+      if (
+        seatNumber === item
+      ) {
+        toggleInformation = `btn btn-danger m-1 active col-2 text-center"  aria-pressed="false" disabled`;
+      } //if
+    })//forEach
+    return toggleInformation
+  } //toggleSeatSelection
+
+
 
   createTable = (data) => {
     let table = []
@@ -49,6 +82,8 @@ class SeatSelection extends React.Component {
     let rowNum = []
     let colNum = []
     let colLetter = ""
+    let seat = ""
+    // let toggleInformation = `btn btn-primary m-1 active col-2 text-center" data-bs-toggle="button" aria-pressed="false"`;
 
     //Outer loop to create parent
     if (this.state.flight.length > 0) {
@@ -61,9 +96,12 @@ class SeatSelection extends React.Component {
       let children = []
       //inner loop to create children
       for (let j = 0; j < colNum; j++) {
-
+        //things happening here:
+        //column number converted to corresponding alphabet number
+        //id of <td> set to seat number based off colLetter+rowNum
         colLetter = String.fromCharCode(97 + j).toUpperCase()
-        children.push(<td className="btn btn-danger m-1 active col-2 text-center" data-bs-toggle="button" aria-pressed="true">{`${i+1}${colLetter.toUpperCase()}`}</td>)
+        seat = `${i+1}${colLetter}`
+        children.push(<td className={this.toggleSeatSelection(seat)} onClick="" id={`${seat}`}>{seat}</td>)
       }
       //Create the parent and add the children
       table.push(<tr>{children}</tr>)
