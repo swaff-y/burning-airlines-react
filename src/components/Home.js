@@ -38,7 +38,7 @@ class Home extends React.Component {
         this.fetchFlights()
       }
 
-      
+
 
       render(){
       return(
@@ -54,7 +54,7 @@ class Home extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {this.props.flightData.map((flight,index) => <tr key={index}><td> {flight.date}{} </td> <td> <a href='#'>{flight.flight_no}</a></td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
+                  {this.props.searchData.map((flight,index) => <tr key={index}><td> {flight.date}{} </td> <td> <a href='#'>{flight.flight_no}</a></td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
                 </tbody>
               </table>
         </div>
