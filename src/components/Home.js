@@ -26,12 +26,12 @@ class Home extends React.Component {
 
 
       fetchFlights= ()=>{
-      axios.get(AIRPLANE_API_URL)
-      .then((res)=>{
+        axios.get(AIRPLANE_API_URL)
+        .then((res)=>{
         console.log('response:', res.data);
         this.setState({flights:res.data}); //save into state
-      })
-      .catch(console.warn);
+        })
+        .catch(console.warn);
       }
 
       componentDidMount(){
