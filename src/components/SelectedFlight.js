@@ -3,22 +3,22 @@ import axios from 'axios';
 import '../App.css';
 
 
-const AIRPLANE_API_URL = 'http://localhost:3000/flights/select/';
+const AIRPLANE_API_URL = 'http://localhost:3000/flights/';
 
 class SelectedFlight extends React.Component {
 
   constructor(props) {
       super(props);
       this.state = {
-          selectedFlight: '',
+          selectedFlight: ''
 
       };
   };
 
   componentDidMount(props){
-    let URL = AIRPLANE_API_URL+this.props.selectedFlight
+    let URL = AIRPLANE_API_URL+this.props.selectedFlight.json
     console.log(URL);
-    axios.get(AIRPLANE_API_URL, this.props.json)
+    axios.get(URL)
     .then((res)=>{
     console.log('response:', res.data);
     this.setState({selectedFlight:res.data}); //save into state
