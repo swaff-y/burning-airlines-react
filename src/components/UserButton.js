@@ -35,6 +35,12 @@ class UserButton extends React.Component {
     this.props.updateUser(ev.target.innerText);
   }
 
+  // toggleActiveUser = (user) => {
+  //   this.state.data.forEach(function(item) {
+  //     if (this.props.currentUser === ){}
+  //   }//forEach
+  // }//toggleActiveUser
+
   render() {
     const selectedUser=this.state.data.name;
 

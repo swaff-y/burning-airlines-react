@@ -28,11 +28,11 @@ class App extends React.Component {
   }
 
   fetchFromVal = (fromVal) =>{
-    setState ({fromVal})
+    this.setState ({fromVal})
   }
 
   fetchToVal = (toVal) =>{
-    setState ({toVal})
+    this.setState ({toVal})
   }
 
   updateUser = (currentUser) => {
@@ -44,7 +44,7 @@ class App extends React.Component {
       <div className="App">
 
         <Router >
-          <Route path ='/' render={(props)=><Nav updateUser={this.updateUser}/>} />
+          <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} updateUser={this.updateUser}/>} />
           <Route exact path ='/' component={Welcome} />
           <Route exact path = "/search" render={(props)=>{<Search to={this.fetchToVal} from={this.fetchFromVal}/>}} />
           <Route exact path = "/flight/:id" component={FlightDetails} />

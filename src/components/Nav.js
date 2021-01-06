@@ -12,15 +12,26 @@ class Nav extends React.Component {
   }
 
 
+  welcome = (props) => {
+    let print = ""
+    if (this.props.currentUser.length > 0) {
+      print = `Welcome, ${this.props.currentUser}`
+    } else {
+      print = ""
+    }
+    return print
+  }
+
   render(){
 
 
     return (
       <div>
           <ul className="nav justify-content-center">
-            <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/search">Search</Link></li>
-            <li className="nav-link"><UserButton updateUser={this.props.updateUser}/></li>
+            <li className="navbar-toggler"><Link className="nav-link" to="/">Home</Link></li>
+            <li className="navbar-toggler"><Link className="nav-link" to="/search">Search</Link></li>
+            <li className="navbar-toggler"><UserButton updateUser={this.props.updateUser}/></li>
+            <li className="nav-link">{this.welcome()}</li>
           </ul>
           <hr/>
       </div>
