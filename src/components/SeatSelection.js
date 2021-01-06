@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+import '../App.css';
 
 
 const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
@@ -8,7 +8,8 @@ const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
 class SeatSelection extends React.Component {
 
   state = {
-    flight: []
+    flight: [],
+    seatAllocated: "1A"
   }; //state
 
 
@@ -21,6 +22,7 @@ class SeatSelection extends React.Component {
     })
     .catch(console.warn);
   }
+
   //Mount the Rails data onload of page
   componentDidMount(){
     console.log('check mounted!');
@@ -35,42 +37,43 @@ class SeatSelection extends React.Component {
     // .catch(console.warn);
   } //updateSeatSelection
 
+  handleChange = (ev) => {
+
+  }
+
+
   createTable = (data) => {
     let table = []
 
-    //Outer loop to create parent
     let length = 1
     let rowNum = []
     let colNum = []
     let colLetter = ""
 
-      if (this.state.flight.length > 0) {
+    //Outer loop to create parent
+    if (this.state.flight.length > 0) {
       rowNum = this.state.flight[0].row;
       colNum = this.state.flight[0].column;
       console.log(rowNum);
     }
 
-
-
-
     for (let i=0; i < rowNum; i++) {
       let children = []
       //inner loop to create children
       for (let j = 0; j < colNum; j++) {
-        //replace with seat data
-        colLetter = String.fromCharCode(97 + j)
-        children.push(<td className="btn btn-danger m-1 col-2 text-center">{`${i+1}${colLetter.toUpperCase()}`}</td>)
+
+        colLetter = String.fromCharCode(97 + j).toUpperCase()
+        children.push(<td className="btn btn-danger m-1 active col-2 text-center" data-bs-toggle="button" aria-pressed="true">{`${i+1}${colLetter.toUpperCase()}`}</td>)
       }
       //Create the parent and add the children
       table.push(<tr>{children}</tr>)
     }
     return table
+
   }//create table
 
 
   render(){
-
-
     return(
       <div>
         <h1>Seat Selection </h1>

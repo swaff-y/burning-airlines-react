@@ -1,5 +1,5 @@
 import './App.css';
-import SeatSelection from './SeatSelection';
+import SeatSelection from './components/SeatSelection';
 import Home from './Home';
 import UserButton from './components/UserButton';
 import SearchForm from './components/SearchForm';
