@@ -1,26 +1,36 @@
+import React from 'react';
 import './App.css';
-import SeatSelection from './SeatSelection';
-import Home from './Home';
-import UserButton from './components/UserButton';
-import SearchForm from './components/SearchForm';
-import SelectedFlight from './SelectedFlight';
 
-function App() {
-  setState={
-    selectedFlight:[]
+import SeatSelection from './components/SeatSelection';
+import Home from './components/Home';
+// import UserButton from './components/UserButton';
+// import SearchForm from './components/SearchForm';
+ import SeatSelector from './components/SeatSelector';
+ import SelectedFlight from './components/SelectedFlight';
+
+
+class App extends React.Component {
+  state = {
+    seatSelection: '4B',
+    selectedFlight: 1
+  };
+
+  render() {
+    return (
+      <div className="App">
+
+        <SelectedFlight selectedFlight={this.state.selectedFlight} />
+
+
+
+      </div>
+    );
   }
-
-  return (
-    <div className="App">
-     <SearchForm selectedFlight={this.state.selectedFlight}/>
-     <UserButton />
-     <Home />
-     <SeatSelection />
-    </div>
-  );
 }
 
 export default App;
+// <SearchForm />
 // <UserButton />
+// <SeatSelector seatSelection={this.state.seatSelection}/>
 // <Home />
 // <SeatSelection />
