@@ -3,14 +3,14 @@ import axios from 'axios';
 import '../App.css';
 
 
-const AIRPLANE_API_URL = 'http://localhost:3000/flights/select/';
+const AIRPLANE_API_URL = 'http://localhost:3000/flights/';
 
 class SelectedFlight extends React.Component {
 
   constructor(props) {
       super(props);
       this.state = {
-          selectedFlight: '',
+          selectedFlight: ''
 
       };
   };
