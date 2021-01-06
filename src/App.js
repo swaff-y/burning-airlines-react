@@ -23,6 +23,14 @@ class App extends React.Component {
     this.setState({seatSelected})
   }
 
+  fetchFromVal = (fromVal) =>{
+    setState ({fromVal})
+  }
+
+  fetchToVal = (toVal) =>{
+    setState ({toVal})
+  }
+
   render() {
     return (
       <div className="App">
@@ -33,12 +41,17 @@ class App extends React.Component {
         <Router >
           <Route path ='/' component={Nav} />
           <Route exact path ='/' component={Welcome} />
+<<<<<<< HEAD
           <Route exact path = "/search" component={Search} />
           <Route exact path = "/flight/:id" render={(props)=> < FlightDetails handleSeatSelected={this.handleSeatSelected} />} />
+=======
+          <Route exact path = "/search" render={(props)=>{<Search to={this.fetchToVal} from={this.fetchFromVal}/>}} />
+          <Route exact path = "/flight/:id" component={FlightDetails} />
+>>>>>>> 668f7c0e431f9e3e1f29d98421a594740bef7759
         </Router>
 
           <footer>
-          <p> &copy Burnt Airlines Inc. (Seriously, good luck.)</p>
+          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)</p>
           </footer>
 
       </div>

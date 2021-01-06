@@ -15,16 +15,20 @@ class Search extends React.Component {
     selectedFlight: '',
     from: '',
     to: ''
+
   };
 
+  
   render(){
     return (
-      <div>
+      <div className="container">
 
-        <SearchForm from={this.state.from} to={this.state.to}/>
+        <SearchForm from={this.props.from} to={this.props.to}/>
         <br />
         <hr />
         <br/>
+
+
         <Home from={this.state.from} to={this.state.to} selectedFlight={this.state.selectedFlight}/>
 
       </div>

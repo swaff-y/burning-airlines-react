@@ -8,18 +8,29 @@ const AIRPLANE_API_URL = 'http://localhost:3000/flights.json';
 class Home extends React.Component {
 
       state = {
-        flights:[]
+        flights:[],
+        fromVal:'',
+        toVal:''
       }; //state
 
-      componentDidMount(){
-        axios.get(AIRPLANE_API_URL)
-        .then((res)=>{
-          console.log('response:', res.data);
-          this.setState({flights:res.data}); //save into state
-        })
-        .catch(console.warn);
+      fetchFlights= ()=>{
+      axios.get(AIRPLANE_API_URL)
+      .then((res)=>{
+        console.log('response:', res.data);
+        this.setState({flights:res.data}); //save into state
+      })
+      .catch(console.warn);
       } //componentDidMount
 
+      componentDidMount(){
+        this.fetchFlights()
+      }
+
+      handleFetchData= ()=> {
+        setState({
+
+        })
+      }
 
       render(){
       return(
