@@ -10,15 +10,16 @@ class SelectedFlight extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          selectedFlight: '',
+          selectedFlight: ''
 
       };
   };
 
   componentDidMount(props){
+
     let URL = AIRPLANE_API_URL+this.props.selectedFlight
-    console.log(URL);
-    axios.get(AIRPLANE_API_URL, this.props.json)
+     // console.log(URL);
+    axios.get(URL)
     .then((res)=>{
     console.log('response:', res.data);
     this.setState({selectedFlight:res.data}); //save into state
@@ -27,10 +28,13 @@ class SelectedFlight extends React.Component {
   } //componentDidMount
 
   render() {
+    let flight = this.state.selectedFlight
     return (
     <div className="App">
-      <p> testing selectedFlight </p>
-      <p>{ URL.id } </p>
+      <h2> Flight {flight.flight_no} </h2>
+      <p>
+        <strong>Date: </strong> {flight.date } <strong> Flight no.: </strong> {flight.flight_no} <strong> From: </strong> {flight.from} <strong> -&gt; To:</strong> {flight.to}
+      </p>
 
     </div>
     ); // return
