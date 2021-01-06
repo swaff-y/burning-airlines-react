@@ -35,7 +35,7 @@ class Home extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {this.state.flights.map(flight => <tr><td> {flight.date}{} </td> <td> <a href='#'>{flight.flight_no}</a></td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
+                  {this.state.flights.map((flight,index) => <tr key={index}><td> {flight.date}{} </td> <td> <a href='#'>{flight.flight_no}</a></td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
                 </tbody>
               </table>
         </div>
