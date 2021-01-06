@@ -13,7 +13,9 @@ class Confirmation extends React.Component {
 
   render(){
     return (
-      <div className="container"
+      <div className="container">
+        <h1>Thanks for booking with Burnt Airlines</h1>
+
 
       </div>
     ); //return
