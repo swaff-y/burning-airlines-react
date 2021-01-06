@@ -11,7 +11,6 @@ class SelectedFlight extends React.Component {
       super(props);
       this.state = {
           selectedFlight: ''
-
       };
   };
 

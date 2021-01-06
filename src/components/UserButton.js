@@ -18,7 +18,7 @@ class UserButton extends React.Component {
   componentDidMount(){
     axios.get(RAILS_USERS_BASE_URL)
     .then((res)=>{
-      console.log("data: ", res.data);
+      // console.log("data: ", res.data);
       this.setState({data: res.data});
     })
     .catch(console.warn);
