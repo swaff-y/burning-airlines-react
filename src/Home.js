@@ -9,7 +9,7 @@ class Home extends React.Component {
 
       state = {
         flights:[]
-      };
+      }; //state
 
       componentDidMount(){
         axios.get(AIRPLANE_API_URL)
@@ -18,29 +18,30 @@ class Home extends React.Component {
           this.setState({flights:res.data}); //save into state
         })
         .catch(console.warn);
-      }
+      } //componentDidMount
 
 
       render(){
       return(
         <div className="App">
-          <h1>Flights</h1>
-
-            <ul>
-              {
-                this.state.flights.map(flight => <li key={flight.id}>  {flight.date} || {flight.flight_no} || {flight.from} || {flight.to} || {flight.airplane.serial_no} </li>)
-              }
-            </ul>
-
-
-
-
+              <h1>Flights</h1>
+              <table className="text-center table">
+                <thead>
+                  <tr>
+                    <th>Flight date </th>
+                    <th>Flight No </th>
+                    <th>Flight From </th>
+                    <th>Flight To </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.flights.map(flight => <tr><td> {flight.date}{} </td> <td> <a href='#'>{flight.flight_no}</a></td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
+                </tbody>
+              </table>
         </div>
-
       ) //return
     } //render
-
-  };
+  };//reactComponent
 
 
 
