@@ -11,6 +11,7 @@ class UserButton extends React.Component {
       super(props);
       this.state = {
           data: [],
+          currentUser: []
       };
   };
 
@@ -23,11 +24,25 @@ class UserButton extends React.Component {
     .catch(console.warn);
   }
 
+  // updateUser = (user) => {
+  //   this.setState({currentUser: user});
+  //   console.log(this.state.);
+  // // }
+  // {this.state.active ? 'your_className': null}
+
+  handleClick = (ev) => {
+    console.log("clicked value:", ev.target.innerText);
+    this.props.updateUser(ev.target.innerText);
+  }
+
   render() {
-    const button = this.state.data.map((data)=> <li key={data.id}><a className="dropdown-item" href="http://localhost:3000/" > {data.name} </a></li>)
+    const selectedUser=this.state.data.name;
+
+    const button = this.state.data.map((data)=> <li key={data.id} className="dropdown-item" onClick={(e)=> this.handleClick(e)}>{data.name}</li>)
+
     return (
     <div className="dropdown">
-      <button className="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      <button className="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
       User
       </button>
       <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">

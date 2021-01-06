@@ -17,6 +17,7 @@ class App extends React.Component {
   state = {
     seatSelection: '4B',
     selectedFlight: 13,
+    currentUser: "",
     fromVal:'',
     toVal:''
 
@@ -28,22 +29,25 @@ class App extends React.Component {
 
 
 
+  updateUser = (currentUser) => {
+    this.setState({currentUser})
+  }
+
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>Welcome to Burnt Airlines</h1>
-          <p>Good luck.</p>
-        </header>
+
         <Router >
-          <Route path ='/' component={Nav} />
+          <Route path ='/' render={(props)=><Nav updateUser={this.updateUser}/>} />
           <Route exact path ='/' component={Welcome} />
           <Route exact path ='/search' component={Search} />
           <Route exact path = "/flight/:id" component={FlightDetails} />
         </Router>
 
           <footer>
-          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)</p>
+            <br/>
+            <hr/>
+          <p> &copy; Burnt Airlines Inc. </p>
           </footer>
 
       </div>
