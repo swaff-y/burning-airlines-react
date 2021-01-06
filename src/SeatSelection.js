@@ -59,7 +59,7 @@ class SeatSelection extends React.Component {
       for (let j = 0; j < colNum; j++) {
         //replace with seat data
         colLetter = String.fromCharCode(97 + j)
-        children.push(<td className="btn btn-primary m-1">{`${i+1}${colLetter.toUpperCase()}`}</td>)
+        children.push(<td className="btn btn-danger m-1 col-2 text-center">{`${i+1}${colLetter.toUpperCase()}`}</td>)
       }
       //Create the parent and add the children
       table.push(<tr>{children}</tr>)
@@ -75,7 +75,7 @@ class SeatSelection extends React.Component {
       <div>
         <h1>Seat Selection </h1>
 
-          <table>
+          <table className="container">
             {this.createTable(this.state.flight)}
           </table>
 
