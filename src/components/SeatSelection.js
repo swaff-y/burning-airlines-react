@@ -56,8 +56,7 @@ class SeatSelection extends React.Component {
 
   toggleSeatSelection = (seatNumber) => {
     let toggleInformation = `btn btn-secondary m-1 col-2 text-center" data-bs-toggle="button" `;
-    console.log('seat Number:',seatNumber,'seatAllocated:',this.state.seatAllocated);
-    console.log(this.state.userSeats[0] )
+    // console.log('seat Number:',seatNumber,'seatAllocated:',this.state.seatAllocated);
 
     if (
       seatNumber === this.state.seatAllocated){
@@ -72,6 +71,14 @@ class SeatSelection extends React.Component {
     })//forEach
     return toggleInformation
   } //toggleSeatSelection
+
+  toggleUpdateSeat = (e) => {
+    console.log('e:', e);
+    console.log(e.target.innerText);
+    e.preventDefault();
+    this.setState({seatAllocated: e.target.innerText});
+    this.toggleSeatSelection(e.target.innerText);
+  } //toggleUpdateSeat
 
 
 
@@ -101,7 +108,7 @@ class SeatSelection extends React.Component {
         //id of <td> set to seat number based off colLetter+rowNum
         colLetter = String.fromCharCode(97 + j).toUpperCase()
         seat = `${i+1}${colLetter}`
-        children.push(<td className={this.toggleSeatSelection(seat)} onClick="" id={`${seat}`}>{seat}</td>)
+        children.push(<td onClick={(e) => this.toggleUpdateSeat(e)} className={this.toggleSeatSelection(seat)}  id={`${seat}`}>{seat}</td>)
       }
       //Create the parent and add the children
       table.push(<tr>{children}</tr>)
