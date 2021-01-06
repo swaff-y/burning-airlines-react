@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import '../App.css';
+import { Route, Link, HashRouter as Router} from 'react-router-dom';
 
 
 const AIRPLANE_API_URL = 'http://localhost:3000/flights.json';
@@ -54,7 +55,11 @@ class Home extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {this.props.searchData.map((flight,index) => <tr key={index}><td> {flight.date}{}</td><td><a href='#'>{flight.flight_no}</a></td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
+
+                  <Router>
+                    {this.props.searchData.map((flight,index) => <tr key={index}><td> {flight.date}</td><td><Link to={'/flight/'+flight.id}>{flight.flight_no}</Link> </td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
+                  </Router>
+
                 </tbody>
               </table>
         </div>
