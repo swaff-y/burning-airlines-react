@@ -31,8 +31,9 @@ class UserButton extends React.Component {
   // {this.state.active ? 'your_className': null}
 
   handleClick = (ev) => {
-    console.log("clicked value:", ev.target.innerText);
-    this.props.updateUser(ev.target.innerText);
+    console.log(ev);
+    console.log("clicked value:", ev.target.innerText, ev.target.id);
+    this.props.updateUser(ev.target.innerText, ev.target.id);
   }
 
   // toggleActiveUser = (user) => {
@@ -44,7 +45,7 @@ class UserButton extends React.Component {
   render() {
     const selectedUser=this.state.data.name;
 
-    const button = this.state.data.map((data)=> <li key={data.id} className="dropdown-item" onClick={(e)=> this.handleClick(e)}>{data.name}</li>)
+    const button = this.state.data.map((data)=> <li key={data.id} className="dropdown-item" id={data.id} onClick={(e)=> this.handleClick(e)}>{data.name}</li>)
 
     return (
     <div className="dropdown">
