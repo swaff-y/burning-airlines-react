@@ -50,9 +50,6 @@ class SeatSelection extends React.Component {
     // .catch(console.warn);
   } //updateSeatSelection
 
-  handleChange = (ev) => {
-
-  }
 
   toggleSeatSelection = (seatNumber) => {
     let toggleInformation = `btn btn-secondary m-1 col-2 text-center" data-bs-toggle="button" `;

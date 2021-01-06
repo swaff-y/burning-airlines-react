@@ -27,10 +27,13 @@ class SelectedFlight extends React.Component {
   } //componentDidMount
 
   render() {
+    let flight = this.state.selectedFlight
     return (
     <div className="App">
-      <p> testing selectedFlight </p>
-      <p>{ URL.id } </p>
+      <h2> Flight {flight.flight_no} </h2>
+      <p>
+        <strong>Date: </strong> {flight.date } <strong> Flight no.: </strong> {flight.flight_no} <strong> From: </strong> {flight.from} <strong> -&gt; To:</strong> {flight.to}
+      </p>
 
     </div>
     ); // return
