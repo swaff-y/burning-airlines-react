@@ -20,11 +20,11 @@ class SeatSelector extends React.Component {
     return (
 
     <div className="container">
-      <div className="row">
-        <div className="float-left col-6">
-        <strong>{ this.props.seatSelection }</strong>
+      <div className="row justify-content-center">
+        <div className="text-align-right  col-2">
+        <strong>{ this.props.seatPicked }</strong>
         </div>
-        <div className="float-right col-6">
+        <div className="text-align-left col-2">
           <button className="btn btn-primary" value={this.props.seatSelection} onClick={this.handleClick}>Select Seat</button>
         </div>
       </div>
