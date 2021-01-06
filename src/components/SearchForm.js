@@ -42,10 +42,12 @@ class SearchForm extends React.Component {
   };
 
   handleChangeFrom = (ev) => {
-    this.setState({fromVal: ev.target.value})
+    // this.setState({fromVal: ev.target.value})
+    this.props.to(ev.target.value)
   };
   handleChangeTo = (ev) => {
-    this.setState({toVal: ev.target.value})
+    // this.setState({toVal: ev.target.value})
+    this.props.from(ev.target.value)
   };
 
   render() {
