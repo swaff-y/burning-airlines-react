@@ -39,8 +39,9 @@ class SeatSelection extends React.Component {
     let table = []
 
     //Outer loop to create parent
-    let rowNum = this.state.flight[0];
-    console.log(this.state.flight[0].row);
+    let rowNum = [];
+    rowNum = this.state.flight.map(row=>row.row);
+    console.log(rowNum[0]);
 
 
 
