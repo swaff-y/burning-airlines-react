@@ -20,10 +20,6 @@ class App extends React.Component {
     currentUser: []
   };
 
-  handledSeatSelected = (seatSelected) => {
-    this.setState({seatSelected})
-  }
-
   fetchFromVal = (fromVal) =>{
     this.setState ({fromVal})
   }
@@ -50,7 +46,7 @@ class App extends React.Component {
 
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal}/>} />
 
-        <Route exact path = "/flight/:id" render={(props)=> < FlightDetails handleSeatSelected={this.handleSeatSelected} />} />
+        <Route exact path = "/flight/:flight_id" component={FlightDetails} />
         </Router>
 
           <footer>

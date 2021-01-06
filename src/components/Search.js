@@ -35,7 +35,9 @@ class Search extends React.Component {
     return (
       <div className="container">
 
-        <SearchForm from={this.fetchFromVal} to={this.fetchToVal} searchData={this.fetchSearchData}/>
+        <div className="container w-25 p-1">
+          <SearchForm from={this.fetchFromVal} to={this.fetchToVal} searchData={this.fetchSearchData}/>
+        </div>
         <br />
         <hr />
         <br/>
