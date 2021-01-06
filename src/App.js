@@ -21,13 +21,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <SeatSelector seatSelection={this.state.seatSelection} handledSeatSelected={this.handledSeatSelected}/>
+          <SearchForm />
+          <UserButton />
+          <Home />
+          <SeatSelection />
       </div>
     );
   }
 }
 
 export default App;
-// <SearchForm />
-// <UserButton />
-// <Home />
-// <SeatSelection />
