@@ -33,7 +33,7 @@ class SelectedFlight extends React.Component {
     <div className="App">
       <h2> Flight {flight.flight_no} </h2>
       <p>
-        Date:{flight.date } flight no.: {flight.flight_no} From: {flight.from} -&gt; To: {flight.to}
+        <strong>Date: </strong> {flight.date } <strong> Flight no.: </strong> {flight.flight_no} <strong> From: </strong> {flight.from} <strong> -&gt; To:</strong> {flight.to}
       </p>
 
     </div>
