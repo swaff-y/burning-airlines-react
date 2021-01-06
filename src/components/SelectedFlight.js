@@ -16,9 +16,10 @@ class SelectedFlight extends React.Component {
   };
 
   componentDidMount(props){
+
     let URL = AIRPLANE_API_URL+this.props.selectedFlight
-    console.log(URL);
-    axios.get(AIRPLANE_API_URL, this.props.json)
+     // console.log(URL);
+    axios.get(URL)
     .then((res)=>{
     console.log('response:', res.data);
     this.setState({selectedFlight:res.data}); //save into state
