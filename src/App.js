@@ -11,7 +11,7 @@ import SelectedFlight from './components/SelectedFlight';
 class App extends React.Component {
   state = {
     seatSelection: '4B',
-    selectedFlight: 13
+    selectedFlight: 75
   };
 
   handledSeatSelected = (seatSelected) => {

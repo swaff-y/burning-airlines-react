@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../App.css';
 
 
-const AIRPLANE_API_URL = 'http://localhost:3000/flights/';
+const AIRPLANE_API_URL = 'http://localhost:3000/flights/select/';
 
 class SelectedFlight extends React.Component {
 
@@ -11,7 +11,6 @@ class SelectedFlight extends React.Component {
       super(props);
       this.state = {
           selectedFlight: ''
-
       };
   };
 
