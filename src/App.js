@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import SeatSelection from './SeatSelection';
 import Home from './Home';
