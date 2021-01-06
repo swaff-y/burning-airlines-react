@@ -13,7 +13,11 @@ class SeatSelector extends React.Component {
 
   handleClick = (ev) => {
     console.log("clicked value:", ev.target.value);
-    this.props.handledSeatSelected(ev.target.value);
+
+    
+
+
+    // this.props.handledSeatSelected(ev.target.value);
   }
 
   render() {
@@ -25,7 +29,7 @@ class SeatSelector extends React.Component {
         <strong>{ this.props.seatPicked }</strong>
         </div>
         <div className="text-align-left col-2">
-          <button className="btn btn-primary" value={this.props.seatSelection} onClick={this.handleClick}>Select Seat</button>
+          <button className="btn btn-primary" value={this.props.seatPicked} onClick={this.handleClick}>Select Seat</button>
         </div>
       </div>
     </div>
