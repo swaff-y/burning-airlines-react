@@ -9,12 +9,17 @@ import './App.css';
 class App extends React.Component {
   state = {
     seatSelection: '4B',
+    seatSelected: '',
   };
+
+  handledSeatSelected = (seatSelected) => {
+    this.setState({seatSelected})
+  }
 
   render() {
     return (
       <div className="App">
-        <SeatSelector seatSelection={this.state.seatSelection}/>
+        <SeatSelector seatSelection={this.state.seatSelection} handledSeatSelected={this.handledSeatSelected}/>
       </div>
     );
   }

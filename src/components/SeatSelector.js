@@ -10,10 +10,24 @@ class SeatSelector extends React.Component {
           seatSelection: '',
       };
   };
+
+  handleClick = (ev) => {
+    console.log("clicked value:", ev.target.value);
+    this.props.handledSeatSelected(ev.target.value);
+  }
+
   render() {
     return (
-    <div>
-      { this.props.seatSelection }
+
+    <div className="container">
+      <div className="row">
+        <div className="float-left col-6">
+        <strong>{ this.props.seatSelection }</strong>
+        </div>
+        <div className="float-right col-6">
+          <button className="btn btn-primary" value={this.props.seatSelection} onClick={this.handleClick}>Select Seat</button>
+        </div>
+      </div>
     </div>
     ); // return
   }; //render()
