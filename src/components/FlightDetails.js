@@ -46,7 +46,7 @@ class FlightDetails extends React.Component {
       <div>
         <SelectedFlight flightId={this.props.match.params.flight_id} />
         <SeatSelection flightId={this.props.match.params.flight_id}  row={this.state.row} col={this.state.col} handleSeatPicked={this.handleSeatPicked}/>
-        <SeatSelector handleSeatSelected={this.handleSeatSelected} seatPicked={this.state.seatPicked}  flightId={this.props.match.params.flight_id}   userId={this.props.match.params.user_id}/>
+        <SeatSelector handleSeatSelected={this.handleSeatSelected} seatPicked={this.state.seatPicked}  flightId={this.props.match.params.flight_id}   userId={this.props.match.params.user_id} history={this.props.history}/>
       </div>
     );
   }

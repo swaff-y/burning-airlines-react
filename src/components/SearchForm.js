@@ -35,8 +35,8 @@ class SearchForm extends React.Component {
     let arr = [];
     arr = this.state.data.map((data,index) => <option key={index} value={ data.from }>{ data.from }</option>);
     let unique = arr.filter(this.onlyUnique)
-    console.log('unique:',unique);
-    console.log(Array.isArray(unique));
+    // console.log('unique:',unique);
+    // console.log(Array.isArray(unique));
     return unique ;
   };
 

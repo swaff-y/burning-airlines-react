@@ -10,13 +10,14 @@ class Confirmation extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          // confirmationData: [],
+          confirmationData: [],
           flightNumber: "",
           flightTo:"",
           flightFrom:"",
           name: "",
           flightDay: ""
         }; //state
+        // this.fetchConfirmation= this.fetchConfirmation.bind(this);
       };
 
   componentDidMount(props){
@@ -24,19 +25,51 @@ class Confirmation extends React.Component {
     //this is currently pulling flight ID ..just to confirm API pull is working.
     //===============================================================
     let URL = RESERVATION_API_URL+this.props.match.params.reservationid
-      console.log(URL);
-    axios.get(URL)
-    .then((res)=>{
-    console.log('response:', res.data)
-    this.setState({confirmationData:res.data})
-    this.setState({flightNumber:res.data[0].flight.flight_no}) //save into state
-    this.setState({flightTo:res.data[0].flight.to}) //save into state
-    this.setState({flightFrom:res.data[0].flight.from}) //save into state
-    this.setState({name:res.data[0].user.name}) //save into state
-    this.setState({flightDay:res.data[0].flight.date}) //save into state
-    })
-    .catch(console.warn);
+    // setTimeout(function() {
+        console.log(URL);
+      axios.get(URL)
+      .then((res)=>{
+      console.log('response:', res.data)
+      this.setState({confirmationData:res.data})
+      this.setState({flightNumber:res.data[0].flight.flight_no}) //save into state
+      this.setState({flightTo:res.data[0].flight.to}) //save into state
+      this.setState({flightFrom:res.data[0].flight.from}) //save into state
+      this.setState({name:res.data[0].user.name}) //save into state
+      this.setState({flightDay:res.data[0].flight.date}) //save into state
+      })
+      .catch(console.warn);
+    // }, 500);
+
+    // let URL = RESERVATION_API_URL+this.props.match.params.reservationid
+    //   console.log(URL);
+    // axios.get(URL)
+    // .then((res)=>{
+    // console.log('response:', res.data)
+    // this.setState({confirmationData:res.data})
+    // this.setState({flightNumber:res.data[0].flight.flight_no}) //save into state
+    // this.setState({flightTo:res.data[0].flight.to}) //save into state
+    // this.setState({flightFrom:res.data[0].flight.from}) //save into state
+    // this.setState({name:res.data[0].user.name}) //save into state
+    // this.setState({flightDay:res.data[0].flight.date}) //save into state
+    // })
+    // .catch(console.warn);
   } //componentDidMount
+
+  // fetchConfirmation = () => {
+  //   let URL = RESERVATION_API_URL+this.props.match.params.reservationid
+  //     console.log(URL);
+  //   axios.get(URL)
+  //   .then((res)=>{
+  //   console.log('response:', res.data)
+  //   this.setState({confirmationData:res.data})
+  //   this.setState({flightNumber:res.data[0].flight.flight_no}) //save into state
+  //   this.setState({flightTo:res.data[0].flight.to}) //save into state
+  //   this.setState({flightFrom:res.data[0].flight.from}) //save into state
+  //   this.setState({name:res.data[0].user.name}) //save into state
+  //   this.setState({flightDay:res.data[0].flight.date}) //save into state
+  //   })
+  //   .catch(console.warn);
+  // } //componentDidMount
 
   render(){
     console.log("user: ", this.state.confirmationData);

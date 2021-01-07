@@ -59,7 +59,7 @@ class Home extends React.Component {
                 <tbody>
 
                   <Router>
-                    {this.props.searchData.map((flight,index) => <tr key={index}><td> {flight.date}</td><td><Link to={'/flight/'+flight.id+'/'+this.state.user_id}>{flight.flight_no}</Link> </td> <td> {flight.from}</td> <td> {flight.to}</td> </tr>)}
+                    {this.props.searchData.map((flight,index) => <tr key={index}><td>{flight.date}</td><td><Link to={'/flight/'+flight.id+'/'+this.state.user_id}>{flight.flight_no}</Link></td> <td>{flight.from}</td> <td>{flight.to}</td> </tr>)}
                   </Router>
 
                 </tbody>

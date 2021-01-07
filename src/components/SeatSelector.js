@@ -32,7 +32,8 @@ class SeatSelector extends React.Component {
     })
     .then((res)=>{
     console.log('response:', res.data);
-    // this.setState({selectedFlight:res.data}); //save into state
+     // this.setState({selectedFlight:res.data}); //save into state
+     this.props.history.push(`/confirmation/` + this.state.bookingCode)
     })
     .catch(console.warn);
     // this.props.handledSeatSelected(ev.target.value);
@@ -46,7 +47,7 @@ class SeatSelector extends React.Component {
         <strong>{ this.props.seatPicked }</strong>
         </div>
         <div className="text-align-left col-2">
-          <Link to={"/confirmation/" + this.state.bookingCode}><button className="btn btn-primary" value={this.props.seatPicked} onClick={this.handleClick}>Select Seat</button></Link>
+          <button className="btn btn-primary" value={this.props.seatPicked} onClick={this.handleClick}>Select Seat</button>
         </div>
       </div>
     </div>
