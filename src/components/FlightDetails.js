@@ -16,6 +16,7 @@ class FlightDetails extends React.Component {
         col: 0,
         row: 0,
         seatPicked: "",
+        userId: 0
       };
   };
 
@@ -36,6 +37,8 @@ class FlightDetails extends React.Component {
       this.setState({col:res.data.airplane.column})
       this.setState({flight: res.data}); //save the response into state
     })
+    this.setState({flightId: this.props.match.params.flight_id})
+    this.setState({userId: this.props.match.params.user_id})
   }
 
   render() {
@@ -43,7 +46,7 @@ class FlightDetails extends React.Component {
       <div>
         <SelectedFlight flightId={this.props.match.params.flight_id} />
         <SeatSelection flightId={this.props.match.params.flight_id}  row={this.state.row} col={this.state.col} handleSeatPicked={this.handleSeatPicked}/>
-        <SeatSelector handleSeatSelected={this.handleSeatSelected} seatPicked={this.state.seatPicked}/>
+        <SeatSelector handleSeatSelected={this.handleSeatSelected} seatPicked={this.state.seatPicked}  flightId={this.props.match.params.flight_id}   userId={this.props.match.params.user_id}/>
       </div>
     );
   }
