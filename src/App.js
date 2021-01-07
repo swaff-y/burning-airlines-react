@@ -53,7 +53,8 @@ class App extends React.Component {
         </Router>
 
           <footer>
-          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)</p>
+            <hr />
+          <p> &copy; Burnt Airlines Inc.</p>
           </footer>
 
       </div>
