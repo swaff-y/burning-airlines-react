@@ -54,7 +54,7 @@ class App extends React.Component {
 
           <footer>
             <hr />
-          <p> &copy; Burnt Airlines Inc. <a href='http://localhost:3000/users'>Admin</a></p>
+          <p> &copy; Burnt Airlines Inc. <a href='http://localhost:3000/' target="_blank">Admin</a></p>
           </footer>
 
       </div>
