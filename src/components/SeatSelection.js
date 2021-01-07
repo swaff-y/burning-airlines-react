@@ -12,7 +12,7 @@ class SeatSelection extends React.Component {
 
   state = {
     flight: {},
-    seatAllocated: "2A",
+    seatAllocated: "",
     selectedSeat: "",
     userSeats: [],
     flightData: [],
@@ -84,31 +84,28 @@ class SeatSelection extends React.Component {
 
   toggleSeatSelection = (seatNumber) => {
     let toggleInformation = `"btn btn-secondary m-1 col-1 text-center" data-bs-toggle="button" `;
-    // console.log('seat Number:',seatNumber,'seatAllocated:',this.state.seatAllocated);
 
     if (seatNumber === this.state.seatAllocated){
-      toggleInformation = `"btn btn-primary m-1 active col-1 text-center" aria-pressed="false" disabled`
+      toggleInformation = `"btn btn-primary m-1 active col-1 text-center" aria-pressed="false" disabled occupied`;
     }
-    this.state.userSeats.forEach(function(item) {
-      if (
-        seatNumber === item
-      ) {
-        toggleInformation = `"btn btn-danger m-1 active col-1 text-center"  aria-pressed="false" disabled`;
+    this.state.userSeats.forEach(function(userSeat) {
+
+      if (seatNumber === userSeat) {
+        toggleInformation = `"btn btn-danger m-1 active col-1 text-center"  aria-pressed="false" disabled occupied`;
       } //if
     })//forEach
     return toggleInformation
   } //toggleSeatSelection
 
   toggleUpdateSeat = (e) => {
-    // console.log('e:', e);
-    // console.log(e.target.innerText);
-    e.preventDefault();
-    this.props.handleSeatPicked(e.target.innerText);
-    this.setState({seatAllocated: e.target.innerText});
-    this.toggleSeatSelection(e.target.innerText);
+    console.log('e:', e);
+      // console.log(e.target.innerText);
+      e.preventDefault();
+      this.props.handleSeatPicked(e.target.innerText);
+      this.setState({seatAllocated: e.target.innerText});
+      this.toggleSeatSelection(e.target.innerText);
+
   } //toggleUpdateSeat
-
-
 
   createTable = (data) => {
     let table = []
@@ -134,7 +131,7 @@ class SeatSelection extends React.Component {
         //id of <td> set to seat number based off colLetter+rowNum
         colLetter = String.fromCharCode(97 + j).toUpperCase()
         seat = `${i+1}${colLetter}`
-        children.push(<div key={i+j} onClick={(e) => this.toggleUpdateSeat(e)} className={this.toggleSeatSelection(seat)} id={seat}>{seat}</div>)
+        children.push(<div key={i+j} onClick={(e) => this.toggleUpdateSeat( e)} className={this.toggleSeatSelection(seat)} id={seat}>{seat}</div>)
       }
       //Create the parent and add the children
       table.push(<div key={i*10+3} className="row flex-nowrap justify-content-center">{children}</div>)
