@@ -48,12 +48,13 @@ class App extends React.Component {
 
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal} userID={this.state.currentUserID}/>} />
 
-        <Route exact path = "/flight/:flight_id" component={FlightDetails} />
+        <Route exact path = "/flight/:flight_id/:user_id" component={FlightDetails} />
         <Route exact path = "/flight/:flight_id/confirmation/:reservationid/" component={Confirmation} />
         </Router>
 
           <footer>
-          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)</p>
+            <hr />          
+          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)<a href='http://localhost:3000/users'>Admin</a></p>
           </footer>
 
       </div>
