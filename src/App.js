@@ -53,8 +53,8 @@ class App extends React.Component {
         </Router>
 
           <footer>
-            <hr />          
-          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)<a href='http://localhost:3000/users'>Admin</a></p>
+            <hr />
+          <p> &copy; Burnt Airlines Inc. <a href='http://localhost:3000/users'>Admin</a></p>
           </footer>
 
       </div>
