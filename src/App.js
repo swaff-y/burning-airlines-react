@@ -5,6 +5,7 @@ import './App.css';
 // import UserButton from './components/UserButton';
 // import SearchForm from './components/SearchForm';
 // import SeatSelector from './components/SeatSelector';
+import Confirmation from './components/Confirmation';
 import SelectedFlight from './components/SelectedFlight';
 import Search from './components/Search';
 import Nav from './components/Nav';
@@ -45,13 +46,15 @@ class App extends React.Component {
           <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} currentUserID={this.state.currentUserID} updateUser={this.updateUser}/>} />
           <Route exact path ='/' component={Welcome} />
 
-        <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal}/>} />
+        <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal} userID={this.state.currentUserID}/>} />
 
         <Route exact path = "/flight/:flight_id/:user_id" component={FlightDetails} />
+        <Route exact path = "/flight/:flight_id/confirmation/:reservationid/" component={Confirmation} />
         </Router>
 
           <footer>
-          <p> &copy; Burnt Airlines Inc. (Seriously, good luck.)</p>
+            <hr />
+          <p> &copy; Burnt Airlines Inc.</p>
           </footer>
 
       </div>
