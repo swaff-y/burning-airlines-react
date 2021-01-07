@@ -35,6 +35,15 @@ class SearchForm extends React.Component {
     let arr = [];
     arr = this.state.data.map((data,index) => <option key={index} value={ data.from }>{ data.from }</option>);
     let unique = arr.filter(this.onlyUnique)
+    console.log('unique:',unique);
+    console.log(Array.isArray(unique));
+    return unique ;
+  };
+
+  destinationTo = () => {
+    let arr = [];
+    arr = this.state.data.map((data,index) => <option key={index} value={ data.to }>{ data.to }</option>);
+    let unique = arr.filter(this.onlyUnique)
     return unique ;
   };
 
@@ -89,7 +98,7 @@ class SearchForm extends React.Component {
           <label htmlFor="to" className="form-label">To</label>
             <select className="form-select" aria-describedby="toHelp" id="to" onChange={this.handleChangeTo}>
               <option defaultValue="">Open this select menu</option>
-                { this.destinationFrom() }
+                { this.destinationTo() }
             </select>
           <div id="toHelp" className="form-text">
             Where would you like to fly to?
