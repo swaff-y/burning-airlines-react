@@ -5,6 +5,7 @@ import './App.css';
 // import UserButton from './components/UserButton';
 // import SearchForm from './components/SearchForm';
 // import SeatSelector from './components/SeatSelector';
+import Confirmation from './components/Confirmation';
 import SelectedFlight from './components/SelectedFlight';
 import Search from './components/Search';
 import Nav from './components/Nav';
@@ -48,6 +49,7 @@ class App extends React.Component {
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal} userID={this.state.currentUserID}/>} />
 
         <Route exact path = "/flight/:flight_id" component={FlightDetails} />
+        <Route exact path = "/flight/:flight_id/confirmation/:reservationid/" component={Confirmation} />
         </Router>
 
           <footer>
