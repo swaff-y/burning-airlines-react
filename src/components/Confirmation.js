@@ -13,8 +13,8 @@ class Confirmation extends React.Component {
 
   render(){
     return (
-      <div className="container"
-
+      <div className="container">
+        Reserved
       </div>
     ); //return
   } //render

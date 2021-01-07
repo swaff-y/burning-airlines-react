@@ -47,7 +47,7 @@ class App extends React.Component {
 
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal}/>} />
 
-        <Route exact path = "/flight/:flight_id" component={FlightDetails} />
+        <Route exact path = "/flight/:flight_id/:user_id" component={FlightDetails} />
         </Router>
 
           <footer>

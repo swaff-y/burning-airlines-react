@@ -1,7 +1,8 @@
 import React from 'react';
 // import {Route, Link, HashRouter as Router} from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 
+const RESERVATION_POST_URL = 'http://localhost:3000/reservations';
 
 class SeatSelector extends React.Component {
   constructor(props) {
@@ -11,12 +12,29 @@ class SeatSelector extends React.Component {
       };
   };
 
+  bookingCode = () => {
+    const randomCode = Math.floor(Math.random()*16777215).toString(16);
+    return randomCode;
+  }
+
   handleClick = (ev) => {
     console.log("clicked value:", ev.target.value);
+    console.log("URL:", RESERVATION_POST_URL);
 
-    
+    // const bookingCode = bookingCode();
 
-
+    axios.post(RESERVATION_POST_URL, {
+      seat_no: ev.target.value,
+      booking_code: this.bookingCode(),
+      flight_id: this.props.flightId,
+      user_id: this.props.userId,
+    })
+    .then((res)=>{
+    console.log('response:', res.data);
+    // <Link to="">
+    // this.setState({selectedFlight:res.data}); //save into state
+    })
+    .catch(console.warn);
     // this.props.handledSeatSelected(ev.target.value);
   }
 
