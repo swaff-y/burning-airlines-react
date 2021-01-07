@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <p>Burnt Airlines</p>
+          <br />
         </header>
         <Router >
           <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} currentUserID={this.state.currentUserID} updateUser={this.updateUser}/>} />
@@ -49,7 +49,7 @@ class App extends React.Component {
 
           <footer>
             <hr />
-          <p> &copy; Burnt Airlines Inc. <a href='http://localhost:3000/'>Admin</a></p>
+          <p> &copy; Burnt Airlines Inc. <a href='http://localhost:3000/users' target="_blank">Admin PAge</a></p>
           </footer>
 
       </div>
