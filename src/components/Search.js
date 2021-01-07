@@ -43,7 +43,7 @@ class Search extends React.Component {
         <br/>
 
 
-        <Home from={this.state.from} to={this.state.to} selectedFlight={this.state.selectedFlight} searchData={this.state.searchData}/>
+        <Home from={this.state.from} to={this.state.to} selectedFlight={this.state.selectedFlight} searchData={this.state.searchData} userID={this.props.userID}/>
 
       </div>
     ); //return
