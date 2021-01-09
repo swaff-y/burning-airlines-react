@@ -1,10 +1,5 @@
 import React from 'react';
 import './App.css';
-// import SeatSelection from './components/SeatSelection';
-// import Home from './components/Home';
-// import UserButton from './components/UserButton';
-// import SearchForm from './components/SearchForm';
-// import SeatSelector from './components/SeatSelector';
 import Confirmation from './components/Confirmation';
 import SelectedFlight from './components/SelectedFlight';
 import Search from './components/Search';
@@ -42,14 +37,14 @@ class App extends React.Component {
           <p>Burnt Airlines</p>
         </header>
         <Router >
-
           <Route path ='/' render={(props)=><Nav currentUser={this.state.currentUser} currentUserID={this.state.currentUserID} updateUser={this.updateUser}/>} />
           <Route exact path ='/' component={Welcome} />
 
         <Route exact path = "/search" render={(props)=><Search to={this.fetchToVal} from={this.fetchFromVal} userID={this.state.currentUserID}/>} />
 
         <Route exact path = "/flight/:flight_id/:user_id" component={FlightDetails} />
-        <Route exact path = "/flight/:flight_id/confirmation/:reservationid/" component={Confirmation} />
+        <Route exact path = "/confirmation/:reservationid" component={Confirmation} />
+
         </Router>
 
           <footer>
@@ -63,22 +58,3 @@ class App extends React.Component {
 }
 
 export default App;
-// <SearchForm />
-// <UserButton />
-// <SeatSelector seatSelection={this.state.seatSelection}/>
-// <Home />
-
-//
-// <p>Home</p>
-// <Home />
-// <SelectedFlight selectedFlight={this.state.selectedFlight} />
-// <p>SearchForm</p>
-// <SearchForm />
-// <p>SeatSelection</p>
-// <SeatSelection />
-// <p>SeatSelector</p>
-// <SeatSelector />
-// <p>SelectedFlight</p>
-// <SelectedFlight />
-// <p>UserButton</p>
-// <UserButton />

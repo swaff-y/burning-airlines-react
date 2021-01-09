@@ -88,6 +88,7 @@ class SeatSelection extends React.Component {
 
     if (seatNumber === this.state.seatAllocated){
       toggleInformation = `"btn btn-primary m-1 active col-1 text-center" aria-pressed="false" disabled`
+      // this.setState({seatAllocated: seatNumber});
     }
     this.state.userSeats.forEach(function(item) {
       if (
