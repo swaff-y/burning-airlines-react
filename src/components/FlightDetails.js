@@ -4,7 +4,7 @@ import SeatSelector from './SeatSelector';
 import SelectedFlight from './SelectedFlight';
 import axios from 'axios';
 
-const FLIGHTS_API_URL = 'http://localhost:3000/flights/select/';
+const FLIGHTS_API_URL = 'https://burning-airlines-2021.herokuapp.com/flights/select/';
 
 class FlightDetails extends React.Component {
   constructor(props) {

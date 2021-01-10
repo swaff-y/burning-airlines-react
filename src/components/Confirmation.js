@@ -3,7 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import { Route, Link, HashRouter as Router} from 'react-router-dom';
 
-const RESERVATION_API_URL = 'http://localhost:3000/reservations/booking/';
+const RESERVATION_API_URL = 'https://burning-airlines-2021.herokuapp.com/reservations/booking/';
 
 class Confirmation extends React.Component {
 

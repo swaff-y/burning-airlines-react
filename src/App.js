@@ -49,7 +49,7 @@ class App extends React.Component {
 
           <footer>
             <hr />
-          <p> &copy; Burnt Airlines Inc. <a href='http://localhost:3000/users' target="_blank">Admin PAge</a></p>
+          <p> &copy; Burnt Airlines Inc. <a href='https://burning-airlines-2021.herokuapp.com//users' target="_blank">Admin Page</a></p>
           </footer>
 
       </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../App.css';
 
 
-const AIRPLANE_API_URL = 'http://localhost:3000/flights/select/';
+const AIRPLANE_API_URL = 'https://burning-airlines-2021.herokuapp.com/flights/select/';
 
 class SelectedFlight extends React.Component {
 

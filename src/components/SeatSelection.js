@@ -4,9 +4,9 @@ import axios from 'axios';
 
 
 // const AIRPLANE_API_URL = 'http://localhost:3000/airplanes.json';
-const RESERVATION_API_URL = 'http://localhost:3000/reservations/select/';
-const USER_API_URL = 'http://localhost:3000/users.json';
-const FLIGHTS_API_URL = 'http://localhost:3000/flights/select/';
+const RESERVATION_API_URL = 'https://burning-airlines-2021.herokuapp.com/reservations/select/';
+const USER_API_URL = 'https://burning-airlines-2021.herokuapp.com/users.json';
+const FLIGHTS_API_URL = 'https://burning-airlines-2021.herokuapp.com/flights/select/';
 
 class SeatSelection extends React.Component {
 

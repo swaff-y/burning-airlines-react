@@ -3,8 +3,8 @@ import React from 'react';
 import axios from 'axios';
 // import  from './';
 
-const RAILS_FLIGHTS_BASE_URL = 'http://localhost:3000/flights.json'
-const SEARCH_API_URL = 'http://localhost:3000/flights/';
+const RAILS_FLIGHTS_BASE_URL = 'https://burning-airlines-2021.herokuapp.com/flights.json'
+const SEARCH_API_URL = 'https://burning-airlines-2021.herokuapp.com/flights/';
 
 class SearchForm extends React.Component {
   constructor(props) {

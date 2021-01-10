@@ -4,8 +4,8 @@ import '../App.css';
 import { Route, Link, HashRouter as Router} from 'react-router-dom';
 
 
-const AIRPLANE_API_URL = 'http://localhost:3000/flights.json';
-const SEARCH_API_URL = 'http://localhost:3000/flights/';
+const AIRPLANE_API_URL = 'https://burning-airlines-2021.herokuapp.com/flights.json';
+const SEARCH_API_URL = 'https://burning-airlines-2021.herokuapp.com/flights/';
 
 
 class Home extends React.Component {

@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Link, HashRouter as Router} from 'react-router-dom';
 import axios from 'axios';
 
-const RESERVATION_POST_URL = 'http://localhost:3000/reservations';
+const RESERVATION_POST_URL = 'https://burning-airlines-2021.herokuapp.com/reservations';
 
 class SeatSelector extends React.Component {
   constructor(props) {

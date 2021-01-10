@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../App.css';
 // import  from './';
 
-const RAILS_USERS_BASE_URL = 'http://localhost:3000/users.json';
+const RAILS_USERS_BASE_URL = 'https://burning-airlines-2021.herokuapp.com/users.json';
 
 class UserButton extends React.Component {
   constructor(props) {
